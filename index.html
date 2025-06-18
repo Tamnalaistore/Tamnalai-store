@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>TAMNALAI STORE - Mobile Legends Diamonds</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #181818;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background: #111;
+      padding: 24px 0;
+      text-align: center;
+    }
+    .logo {
+      max-width: 160px;
+      margin: 0 auto 12px auto;
+      display: block;
+    }
+    .headline {
+      font-size: 1.7em;
+      font-weight: bold;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    .subtitle {
+      color: #fbc531;
+      margin-bottom: 20px;
+      font-size: 1.1em;
+    }
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .feature {
+      background: #222;
+      border-radius: 10px;
+      padding: 14px 20px;
+      font-size: 1.1em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 170px;
+    }
+    .section-title {
+      color: #00aaff;
+      font-size: 1.3em;
+      margin: 32px 0 12px 0;
+      text-align: center;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+    .card {
+      background: #23272b;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px #0005;
+      padding: 18px 20px 12px 20px;
+      min-width: 160px;
+      max-width: 180px;
+      text-align: center;
+      margin-bottom: 8px;
+      border: 2px solid transparent;
+      position: relative;
+    }
+    .card.popular {
+      border-color: #fbc531;
+    }
+    .card .title {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .card .price {
+      font-size: 1.25em;
+      color: #4cd137;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+    .card .diamonds {
+      color: #00aaff;
+      margin-bottom: 7px;
+    }
+    .card .badge {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      background: #fbc531;
+      color: #222;
+      font-size: 0.85em;
+      padding: 2px 9px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .combo-section, .battlepass-section {
+      margin-bottom: 32px;
+    }
+    .order-box {
+      background: #23272b;
+      border-radius: 14px;
+      padding: 26px 20px;
+      margin: 0 auto 32px auto;
+      max-width: 450px;
+      box-shadow: 0 3px 16px #0007;
+    }
+    .order-box label {
+      display: block;
+      margin: 12px 0 4px 0;
+      font-weight: 600;
+    }
+    .order-box input {
+      width: 80%;
+      padding: 7px 8px;
+      border-radius: 6px;
+      border: none;
+      background: #181818;
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+    .order-summary, .payment-method, .support-box {
+      margin-bottom: 20px;
+    }
+    .order-summary {
+      background: #20232a;
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 12px;
+    }
+    .total {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #00e67e;
+    }
+    .payment-method {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .qr-code {
+      margin: 10px 0;
+      max-width: 160px;
+      border-radius: 10px;
+      border: 2px solid #333;
+      background: #fff;
+      padding: 8px;
+    }
+    .order-btn {
+      display: block;
+      background: #00aaff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 0;
+      width: 100%;
+      font-size: 1.16em;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background 0.2s;
+      text-decoration: none;
+      text-align: center;
+    }
+    .order-btn:hover {
+      background: #0090d2;
+    }
+    .support-box {
+      background: #222;
+      border-radius: 10px;
+      padding: 16px 18px;
+      text-align: center;
+      margin: 0 auto 32px auto;
+      max-width: 480px;
+    }
+    .why-choose {
+      margin: 0 auto 32px auto;
+      max-width: 700px;
+      background: #20232a;
+      border-radius: 12px;
+      padding: 24px 20px;
+    }
+    .why-choose ul {
+      margin: 12px 0 0 0;
+      padding: 0 0 0 22px;
+    }
+    .quick-links {
+      margin-top: 20px;
+      font-size: 1em;
+    }
+    .quick-links a {
+      color: #fbc531;
+      margin: 0 12px;
+      text-decoration: none;
+    }
+    .quick-links a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 800px) {
+      .features, .products {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+      }
+      .card, .order-box, .why-choose, .support-box {
+        max-width: 95vw;
+      }
+      .products {gap: 14px;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="logo" src="image2" alt="TAMNALAI STORE Logo" />
+    <div class="headline">TAMNALAI STORE</div>
+    <div class="subtitle">Your ultimate destination for Mobile Legends diamonds with lightning-fast delivery</div>
+    <div class="features">
+      <div class="feature">⚡ INSTANT DELIVERY</div>
+      <div class="feature">🛡️ SECURE PAYMENT</div>
+      <div class="feature">🎧 24/7 SUPPORT</div>
+      <div class="feature">⭐ 5-STAR RATED</div>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-title">💎 Diamond Packs</div>
+    <div class="products">
+      <div class="card"><div class="title">5💎 Diamonds</div><div class="price">₹13</div><div class="diamonds">5 Diamonds</div></div>
+      <div class="card"><div class="title">11💎 Diamonds</div><div class="price">₹20</div><div class="diamonds">11 Diamonds</div></div>
+      <div class="card"><div class="title">14💎 Diamonds</div><div class="price">₹25</div><div class="diamonds">14 Diamonds</div></div>
+      <div class="card"><div class="title">22💎 Diamonds</div><div class="price">₹35</div><div class="diamonds">22 Diamonds</div></div>
+      <div class="card"><div class="title">44💎 Diamonds</div><div class="price">₹70</div><div class="diamonds">44 Diamonds</div></div>
+      <div class="card"><div class="title">56💎 Diamonds</div><div class="price">₹79</div><div class="diamonds">56 Diamonds</div></div>
+      <div class="card"><div class="title">86💎 Diamonds</div><div class="price">₹110</div><div class="diamonds">86 Diamonds</div></div>
+      <div class="card"><div class="title">114💎 Diamonds</div><div class="price">₹155</div><div class="diamonds">114 Diamonds</div></div>
+      <div class="card"><div class="title">172💎 Diamonds</div><div class="price">₹205</div><div class="diamonds">172 Diamonds</div><div class="badge">POPULAR</div></div>
+      <div class="card"><div class="title">257💎 Diamonds</div><div class="price">₹305</div><div class="diamonds">257 Diamonds</div></div>
+      <div class="card"><div class="title">343💎 Diamonds</div><div class="price">₹415</div><div class="diamonds">343 Diamonds</div></div>
+      <div class="card"><div class="title">429💎 Diamonds</div><div class="price">₹505</div><div class="diamonds">429 Diamonds</div></div>
+      <div class="card"><div class="title">514💎 Diamonds</div><div class="price">₹625</div><div class="diamonds">514 Diamonds</div><div class="badge">POPULAR</div></div>
+      <div class="card"><div class="title">600💎 Diamonds</div><div class="price">₹725</div><div class="diamonds">600 Diamonds</div></div>
+      <div class="card"><div class="title">706💎 Diamonds</div><div class="price">₹835</div><div class="diamonds">706 Diamonds</div></div>
+      <div class="card"><div class="title">792💎 Diamonds</div><div class="price">₹915</div><div class="diamonds">792 Diamonds</div></div>
+      <div class="card"><div class="title">878💎 Diamonds</div><div class="price">₹1085</div><div class="diamonds">878 Diamonds</div></div>
+      <div class="card"><div class="title">963💎 Diamonds</div><div class="price">₹1125</div><div class="diamonds">963 Diamonds</div><div class="badge">POPULAR</div></div>
+      <div class="card"><div class="title">1135💎 Diamonds</div><div class="price">₹1395</div><div class="diamonds">1135 Diamonds</div></div>
+      <div class="card"><div class="title">2195💎 Diamonds</div><div class="price">₹2435</div><div class="diamonds">2195 Diamonds</div></div>
+      <div class="card"><div class="title">3688💎 Diamonds</div><div class="price">₹4375</div><div class="diamonds">3688 Diamonds</div></div>
+      <div class="card"><div class="title">5532💎 Diamonds</div><div class="price">₹6375</div><div class="diamonds">5532 Diamonds</div></div>
+      <div class="card"><div class="title">6585💎 Diamonds</div><div class="price">₹7345</div><div class="diamonds">6585 Diamonds</div></div>
+      <div class="card"><div class="title">9288💎 Diamonds</div><div class="price">₹10226</div><div class="diamonds">9288 Diamonds</div></div>
+    </div>
+  </section>
+
+  <section class="battlepass-section">
+    <div class="section-title">🎫 Battle Passes</div>
+    <div class="products">
+      <div class="card"><div class="title">Weekly Pass</div><div class="price">₹129</div><div class="badge">POPULAR</div></div>
+      <div class="card"><div class="title">Twilight Pass</div><div class="price">₹689</div></div>
+    </div>
+  </section>
+
+  <section class="combo-section">
+    <div class="section-title">🔥 Special Combos</div>
+    <div class="products">
+      <div class="card"><div class="title">50+50 Bonus Pack</div><div class="price">₹75</div><div class="diamonds">100 Diamonds</div></div>
+      <div class="card"><div class="title">150+150 Bonus Pack</div><div class="price">₹250</div><div class="diamonds">300 Diamonds</div></div>
+      <div class="card"><div class="title">250+250 Bonus Pack</div><div class="price">₹365</div><div class="diamonds">500 Diamonds</div></div>
+      <div class="card"><div class="title">500+500 Bonus Pack</div><div class="price">₹750</div><div class="diamonds">1000 Diamonds</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">👤 Player Information</div>
+    <div class="order-box">
+      <form autocomplete="off">
+        <label for="gameid">Game ID (User ID)</label>
+        <input type="text" id="gameid" name="gameid" placeholder="Enter your Game ID" required>
+
+        <label for="serverid">Server ID</label>
+        <input type="text" id="serverid" name="serverid" placeholder="Enter your Server ID" required>
+
+        <div style="font-size: 0.96em; margin: 10px 0 2px 0; color: #aaa;">
+          <b>How to find your IDs:</b><br>
+          • Open Mobile Legends and go to your profile<br>
+          • Your Game ID and Server ID are displayed at the top<br>
+          • Example: Game ID: 123456789, Server ID: 1234
+        </div>
+
+        <div class="order-summary">
+          <div>Selected Pack: <b>None</b></div>
+          <div>Amount: <b>₹0</b></div>
+          <div>Processing Fee: <b>FREE</b></div>
+          <div class="total">Total: ₹0</div>
+        </div>
+
+        <div class="payment-method">
+          <div>
+            <div style="font-weight: 600; margin-bottom: 4px;">💳 Payment Method</div>
+            <div>UPI Payment<br><span style="font-size:0.95em;">lovesonloitongbam@fam</span></div>
+          </div>
+          <img class="qr-code" src="image1" alt="UPI QR Code" />
+        </div>
+
+        <a class="order-btn" href="https://wa.me/919862277104?text=Hello!%20I%20want%20to%20order%20Mobile%20Legends%20diamonds%20from%20TAMNALAI%20STORE." target="_blank">
+          📱 ORDER NOW <span style="font-size:0.9em;">(Order via WhatsApp with instant support)</span>
+        </a>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="why-choose">
+      <div class="section-title">🛡️ Why Choose Us?</div>
+      <ul>
+        <li>✓ Fast delivery within 5 minutes</li>
+        <li>✓ 100% secure payment methods</li>
+        <li>✓ 24/7 customer support</li>
+        <li>✓ Money-back guarantee</li>
+        <li>✓ Trusted by 50,000+ gamers</li>
+      </ul>
+    </div>
+    <div class="support-box">
+      <div style="font-size:1.15em; margin-bottom:8px;"><b>Contact Us</b></div>
+      <div>📱 WhatsApp: <a href="https://wa.me/919862277104" style="color:#fbc531;">+91 9862277104</a></div>
+      <div>⏰ Available 24/7</div>
+      <div>🎮 Fast Delivery</div>
+    </div>
+    <div class="quick-links">
+      <a href="#diamond-packs">Diamond Packs</a> | 
+      <a href="#battle-passes">Battle Passes</a> | 
+      <a href="#special-offers">Special Offers</a> | 
+      <a href="#support">Support</a>
+    </div>
+  </section>
+
+  <footer>
+    <div style="font-size:1.05em;">
+      TAMNALAI STORE<br>Your trusted partner for Mobile Legends diamonds and gaming currency.
+    </div>
+    <div style="margin-top:8px; font-size:0.92em;">
+      © 2024 TAMNALAI STORE. All rights reserved. | Secure Gaming Currency Provider
+    </div>
+  </footer>
+</body>
+                                                         </html>
